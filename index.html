@@ -1,36 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Article preview component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <main class="blog-post">
+    <section class="blog-post__banner">
+      <img src="images/drawers.jpg" alt="Green dresser with decorations against a white brick wall."
+        class="blog-post__image">
+    </section>
 
-  Shift the overall look and feel by adding these wonderful 
-  touches to furniture in your home
+    <section class="blog-post__content">
+      <header class="blog-post__header">
+        <h1 class="blog-post__title">
+          Shift the overall look and feel by adding these wonderful touches to furniture in your home
+        </h1>
+        <p class="blog-post__intro">
+          Ever been in a room and felt like something was missing? Perhaps
+          it felt slightly bare and uninviting. I've got some simple tips
+          to help you make any room feel complete.
+        </p>
+      </header>
 
-  Ever been in a room and felt like something was missing? Perhaps 
-  it felt slightly bare and uninviting. I’ve got some simple tips 
-  to help you make any room feel complete.
+      <div class="blog-post__meta">
+        <div class="blog-post__author-container">
+          <p class="blog-post__author">Michelle Appleton</p>
+          <time class="blog-post__date" datetime="2020-06-28">28 Jun 2020</time>
+        </div>
 
-  Michelle Appleton
-  28 Jun 2020
+        <div class="blog-post__share-button blog-post__share-button--hidden" aria-hidden="true">
+          <span class="blog-post__share-label">Share</span>
+          <ul class="blog-post__share-list">
 
-  Share
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+            <li>
+              <a href="#" class="blog-post__share-link">
+                <i class="" aria-hidden="true"></i>
+                <span class="sr-only">Facebook</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="blog-post__share-link">
+                <i class="" aria-hidden="true"></i>
+                <span class="sr-only">Twitter</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="blog-post__share-link">
+                <i class="" aria-hidden="true"></i>
+                <span class="sr-only">Pinterest</span>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Vladyslav Shulhach</a>.
+  </footer>
 </body>
+
 </html>
