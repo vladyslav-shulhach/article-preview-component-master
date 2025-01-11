@@ -7,6 +7,12 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
+  <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+
   <title>Frontend Mentor | Article preview component</title>
 
   <style>
@@ -41,12 +47,20 @@
       </header>
 
       <div class="blog-post__meta">
+        <div class="blog-post__avatar">
+          <img src="images/avatar-michelle.jpg" alt="The picture of Michelle Appleton" class="blog-post__author-avatar">
+        </div>
+
         <div class="blog-post__author-container">
           <p class="blog-post__author">Michelle Appleton</p>
           <time class="blog-post__date" datetime="2020-06-28">28 Jun 2020</time>
         </div>
 
-        <div class="blog-post__share-button blog-post__share-button--hidden" aria-hidden="true">
+        <div class="blog-post__share-button" id="shareButton">
+          <img src="images/icon-share.svg" alt="Share button">
+        </div>
+
+        <div class="blog-post__share-menu--hidden" id="shareMenu">
           <span class="blog-post__share-label">Share</span>
           <ul class="blog-post__share-list">
 
