@@ -16,11 +16,14 @@ main {
   margin-top: 4.5rem;
   width: 20.5rem;
   overflow: hidden;
+  border-radius: 9px;
+  position: relative;
 }
 
-.blog-post {
-  border-radius: 9px;
+ul {
+  list-style: none;
 }
+
 .blog-post__banner {
   height: 12.5rem;
 }
@@ -72,10 +75,35 @@ main {
 }
 .blog-post__share-button {
   width: 2rem;
+  cursor: pointer;
+  z-index: 1;
 }
-.blog-post__share-button--hidden {
-  display: none;
+.blog-post__share-menu {
+  position: absolute;
+  display: flex;
+  background-color: hsl(217, 19%, 35%);
+  width: 100%;
+  color: hsl(0, 0%, 100%);
+  padding: 1rem;
 }
-.blog-post__share-menu--hidden {
+.blog-post__share-menu ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#shareMenu {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50%);
+  transition: all 0.3s ease;
+}
+
+#shareMenu.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sr-only {
   display: none;
 }/*# sourceMappingURL=style.css.map */

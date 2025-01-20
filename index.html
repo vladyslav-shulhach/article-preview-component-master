@@ -1,100 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="styles/style.css" />
 
-  <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <title>Frontend Mentor | Article preview component</title>
 
-  <title>Frontend Mentor | Article preview component</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
 
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-</head>
+  <body>
+    <main class="blog-post">
+      <section class="blog-post__banner">
+        <img
+          src="images/drawers.jpg"
+          alt="Green dresser with decorations against a white brick wall."
+          class="blog-post__image"
+        />
+      </section>
 
-<body>
-  <main class="blog-post">
-    <section class="blog-post__banner">
-      <img src="images/drawers.jpg" alt="Green dresser with decorations against a white brick wall."
-        class="blog-post__image">
-    </section>
+      <section class="blog-post__content">
+        <header class="blog-post__header">
+          <h1 class="blog-post__title">
+            Shift the overall look and feel by adding these wonderful touches to
+            furniture in your home
+          </h1>
+          <p class="blog-post__intro">
+            Ever been in a room and felt like something was missing? Perhaps it
+            felt slightly bare and uninviting. I've got some simple tips to help
+            you make any room feel complete.
+          </p>
+        </header>
 
-    <section class="blog-post__content">
-      <header class="blog-post__header">
-        <h1 class="blog-post__title">
-          Shift the overall look and feel by adding these wonderful touches to furniture in your home
-        </h1>
-        <p class="blog-post__intro">
-          Ever been in a room and felt like something was missing? Perhaps
-          it felt slightly bare and uninviting. I've got some simple tips
-          to help you make any room feel complete.
-        </p>
-      </header>
+        <div class="blog-post__meta">
+          <div class="blog-post__avatar">
+            <img
+              src="images/avatar-michelle.jpg"
+              alt="The picture of Michelle Appleton"
+              class="blog-post__author-avatar"
+            />
+          </div>
 
-      <div class="blog-post__meta">
-        <div class="blog-post__avatar">
-          <img src="images/avatar-michelle.jpg" alt="The picture of Michelle Appleton" class="blog-post__author-avatar">
+          <div class="blog-post__author-container">
+            <p class="blog-post__author">Michelle Appleton</p>
+            <time class="blog-post__date" datetime="2020-06-28"
+              >28 Jun 2020</time
+            >
+          </div>
+
+          <div class="blog-post__share-button" id="shareButton">
+            <img src="images/icon-share.svg" alt="Share button" />
+          </div>
         </div>
+      </section>
 
-        <div class="blog-post__author-container">
-          <p class="blog-post__author">Michelle Appleton</p>
-          <time class="blog-post__date" datetime="2020-06-28">28 Jun 2020</time>
-        </div>
+      <section
+        class="blog-post__share-menu"
+        id="shareMenu"
+        role="menu"
+        aria-hidden="true"
+      >
+        <span class="blog-post__share-label">Share</span>
+        <ul class="blog-post__share-list">
+          <li role="menuitem">
+            <a href="#" class="blog-post__share-link">
+              <img
+                src="images/icon-facebook.svg"
+                alt="Facebook icon"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
 
-        <div class="blog-post__share-button" id="shareButton">
-          <img src="images/icon-share.svg" alt="Share button">
-        </div>
-      </div>
-    </section>
+          <li>
+            <a href="#" class="blog-post__share-link">
+              <img
+                src="images/icon-twitter.svg"
+                alt="Twitter icon"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Twitter</span>
+            </a>
+          </li>
 
-    <section class="blog-post__share-menu">
-      <span class="blog-post__share-label">Share</span>
-      <ul class="blog-post__share-list">
+          <li>
+            <a href="#" class="blog-post__share-link">
+              <img
+                src="images/icon-pinterest.svg"
+                alt="Pinterest icon"
+                aria-hidden="true"
+              />
+              <span class="sr-only">Pinterest</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-        <li>
-          <a href="#" class="blog-post__share-link">
-            <img src="images/icon-facebook.svg" alt="Facebook icon">
-            <span class="sr-only">Facebook</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#" class="blog-post__share-link">
-            <img src="images/icon-twitter.svg" alt="Twitter icon">
-            <span class="sr-only">Twitter</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#" class="blog-post__share-link">
-            <img src="images/icon-pinterest.svg" alt="Pinterest icon">
-            <span class="sr-only">Pinterest</span>
-          </a>
-        </li>
-
-      </ul>
-    </section>
-  </main>
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="#">Vladyslav Shulhach</a>.
-  </footer>
-</body>
-
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Vladyslav Shulhach</a>.
+    </footer>
+  </body>
 </html>
