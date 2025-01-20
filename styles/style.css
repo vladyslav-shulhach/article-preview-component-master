@@ -84,7 +84,7 @@ ul {
   background-color: hsl(217, 19%, 35%);
   width: 100%;
   color: hsl(0, 0%, 100%);
-  padding: 1rem;
+  padding: 1.5rem 2rem;
 }
 .blog-post__share-menu ul {
   display: flex;
@@ -93,15 +93,18 @@ ul {
 
 #shareMenu {
   visibility: hidden;
-  opacity: 0;
-  transform: translateY(50%);
+  transform: translateY(0);
   transition: all 0.3s ease;
 }
 
 #shareMenu.active {
   visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-100%);
+}
+
+.blog-post__share-button:hover,
+.blog-post__share-button:focus {
+  filter: brightness(1.2);
 }
 
 .sr-only {

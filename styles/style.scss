@@ -107,7 +107,7 @@ ul {
     background-color: $very-dark-grayish-blue;
     width: 100%;
     color: $white;
-    padding: 1rem;
+    padding: 1.5rem 2rem;
 
     ul {
       display: flex;
@@ -118,15 +118,18 @@ ul {
 
 #shareMenu {
   visibility: hidden;
-  opacity: 0;
-  transform: translateY(50%);
+  transform: translateY(0);
   transition: all 0.3s ease;
 }
 
 #shareMenu.active {
   visibility: visible;
-  opacity: 1;
-  transform: translateY(0);
+  transform: translateY(-100%);
+}
+
+.blog-post__share-button:hover,
+.blog-post__share-button:focus {
+  filter: brightness(1.2);
 }
 
 .sr-only {
