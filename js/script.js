@@ -6,7 +6,8 @@ document.addEventListener("click", handleOutsideClick);
 document.addEventListener("keydown", handleEscapeKey);
 
 function toggleShareMenu() {
-    const isVisible = shareMenu.classList.contains("active");
+  // event.stopPropagation();
+  const isVisible = shareMenu.classList.contains("active");
   
     if (isVisible) {
       hideShareMenu();
@@ -23,14 +24,16 @@ function hideShareMenu() {
     shareMenu.classList.remove("active");
   }
 
-  function handleOutsideClick(event) {
-    if (!shareMenu.contains(event.target) && event.target !== shareButton) {
-      hideShareMenu();
-    }
+// Close the share menu if clicked outside
+function handleOutsideClick(event) {
+  if (!shareMenu.contains(event.target) && !shareButton.contains(event.target)) {
+    hideShareMenu();
   }
+}
 
-  function handleEscapeKey(event) {
-    if (event.key === "Escape") {
-      hideShareMenu();
-    }
+// Close the share menu when pressing the Escape key
+function handleEscapeKey(event) {
+  if (event.key === "Escape") {
+    hideShareMenu();
   }
+}
