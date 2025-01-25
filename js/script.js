@@ -18,10 +18,12 @@ function toggleShareMenu() {
 
 function showShareMenu() {
     shareMenu.classList.add("active");
+    shareButton.classList.add("active");
   }
   
 function hideShareMenu() {
     shareMenu.classList.remove("active");
+    shareButton.classList.remove("active");
   }
 
 // Close the share menu if clicked outside

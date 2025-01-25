@@ -5,6 +5,9 @@ $light-grayish-blue: hsl(210, 46%, 95%);
 $white: hsl(0, 0%, 100%);
 $transparent-white: hsla(0, 0%, 100%, 0.7);
 
+$hover-button: hsl(208, 27%, 89%);
+$hover-button-active: hsl(217, 22%, 58%);
+
 $family-font: "Manrope", serif;
 $title-font-size: 1rem;
 $regular-font-size: 0.8rem;
@@ -29,6 +32,16 @@ main {
   overflow: hidden;
   border-radius: 9px;
   position: relative;
+}
+
+footer {
+  margin-top: 2rem;
+  font-size: $regular-font-size;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
 }
 
 ul {
@@ -103,8 +116,15 @@ ul {
 
   &__share-button {
     width: 2rem;
+    height: 2rem;
+    background-color: $light-grayish-blue;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     z-index: 1;
+    transition: all 0.3s ease;
   }
 
   &__share-menu {
@@ -152,9 +172,20 @@ ul {
   transform: translateY(-100%);
 }
 
+#shareButton.active {
+  background-color: $desaturated-dark-blue;
+  img {
+    filter: brightness(5);
+  }
+}
+
+#shareButton.active:hover {
+  background-color: $hover-button-active;
+}
+
 .blog-post__share-button:hover,
 .blog-post__share-button:focus {
-  filter: brightness(1.2);
+  background-color: $hover-button;
 }
 
 .sr-only {

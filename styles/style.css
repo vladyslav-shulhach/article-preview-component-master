@@ -20,6 +20,15 @@ main {
   position: relative;
 }
 
+footer {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  text-align: center;
+}
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+
 ul {
   list-style: none;
 }
@@ -80,8 +89,15 @@ ul {
 }
 .blog-post__share-button {
   width: 2rem;
+  height: 2rem;
+  background-color: hsl(210, 46%, 95%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   z-index: 1;
+  transition: all 0.3s ease;
 }
 .blog-post__share-menu {
   position: absolute;
@@ -122,9 +138,20 @@ ul {
   transform: translateY(-100%);
 }
 
+#shareButton.active {
+  background-color: hsl(214, 17%, 51%);
+}
+#shareButton.active img {
+  filter: brightness(5);
+}
+
+#shareButton.active:hover {
+  background-color: hsl(217, 22%, 58%);
+}
+
 .blog-post__share-button:hover,
 .blog-post__share-button:focus {
-  filter: brightness(1.2);
+  background-color: hsl(208, 27%, 89%);
 }
 
 .sr-only {
