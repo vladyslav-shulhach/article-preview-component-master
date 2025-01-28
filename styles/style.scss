@@ -1,5 +1,5 @@
 $very-dark-grayish-blue: hsl(217, 19%, 35%);
-$desaturated-dark-blue: hsl(214, 17%, 51%);
+$desaturated-dark-blue: hsl(215, 16%, 51%);
 $grayish-blue: hsl(212, 23%, 69%);
 $light-grayish-blue: hsl(210, 46%, 95%);
 $white: hsl(0, 0%, 100%);
@@ -32,6 +32,7 @@ main {
   overflow: hidden;
   border-radius: 9px;
   position: relative;
+  box-shadow: 0px 12px 24px -12px hsla(215, 16%, 51%, 0.3);
 }
 
 footer {
@@ -190,4 +191,31 @@ ul {
 
 .sr-only {
   display: none;
+}
+
+// === RESPONSIVE DESIGN ===
+
+// Tablets, small desktops, laptops
+@media (min-width: 768px) {
+  main {
+    height: 17.5rem;
+    width: 45.5rem;
+    display: flex;
+    align-items: center;
+  }
+  .blog-post {
+    &__banner {
+      height: 100%;
+    }
+
+    &__image {
+      height: 100%;
+      object-position: left;
+    }
+
+    &__content {
+      height: 100%;
+      max-width: 27.75rem;
+    }
+  }
 }
