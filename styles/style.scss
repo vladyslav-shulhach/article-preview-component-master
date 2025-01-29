@@ -1,17 +1,20 @@
-$very-dark-grayish-blue: hsl(217, 19%, 35%);
-$desaturated-dark-blue: hsl(215, 16%, 51%);
-$grayish-blue: hsl(212, 23%, 69%);
-$light-grayish-blue: hsl(210, 46%, 95%);
-$white: hsl(0, 0%, 100%);
-$transparent-white: hsla(0, 0%, 100%, 0.7);
-
-$hover-button: hsl(208, 27%, 89%);
-$hover-button-active: hsl(217, 22%, 58%);
+// === Color and Typography Variables ===
+$colors: (
+  very-dark-grayish-blue: hsl(217, 19%, 35%),
+  desaturated-dark-blue: hsl(215, 16%, 51%),
+  grayish-blue: hsl(212, 23%, 69%),
+  light-grayish-blue: hsl(210, 46%, 95%),
+  white: hsl(0, 0%, 100%),
+  transparent-white: hsla(0, 0%, 100%, 0.7),
+  hover-button: hsl(208, 27%, 89%),
+  hover-button-active: hsl(217, 22%, 58%),
+);
 
 $family-font: "Manrope", serif;
 $title-font-size: 1rem;
 $regular-font-size: 0.8rem;
 
+// === Global Styles ===
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,20 +22,21 @@ $regular-font-size: 0.8rem;
 }
 
 body {
-  background-color: $light-grayish-blue;
+  background-color: map-get($colors, light-grayish-blue);
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: $family-font;
 }
 
+// === Main Layout ===
 main {
   margin-top: 4.5rem;
   width: 20.5rem;
-  overflow: hidden;
   border-radius: 9px;
+  overflow: hidden;
   position: relative;
-  box-shadow: 0px 12px 24px -12px hsla(215, 16%, 51%, 0.3);
+  box-shadow: 0px 12px 24px -12px map-get($colors, desaturated-dark-blue);
 }
 
 footer {
@@ -49,156 +53,153 @@ ul {
   list-style: none;
 }
 
+// === Blog Post Styling ===
 .blog-post {
   &__banner {
     height: 12.5rem;
     overflow: hidden;
   }
-
   &__image {
     width: 100%;
     height: 115%;
     object-fit: cover;
     filter: brightness(1.1) contrast(0.85);
   }
-
   &__content {
-    background-color: $white;
-    padding: 2rem 2rem 1rem 2rem;
+    background-color: map-get($colors, white);
+    padding: 2rem;
     display: grid;
     gap: 1.875rem;
   }
-
   &__header {
     display: grid;
     gap: 1rem;
   }
-
   &__title {
     font-size: $title-font-size;
-    line-height: 150%;
-    color: $very-dark-grayish-blue;
+    color: map-get($colors, very-dark-grayish-blue);
+    line-height: 1.5;
   }
-
   &__intro {
     font-size: $regular-font-size;
-    letter-spacing: 0.025rem;
-    line-height: 150%;
-    color: $desaturated-dark-blue;
+    color: map-get($colors, desaturated-dark-blue);
+    line-height: 1.5;
   }
-
   &__meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
-  &__avatar {
-    width: 2.5rem;
-  }
-
+  // &__avatar {
+  //   width: 2.5rem;
+  // }
   &__author-avatar {
-    width: 100%;
+    width: 2.5rem;
     border-radius: 50%;
   }
-
   &__author-container {
     font-size: $regular-font-size;
   }
-
   &__author {
-    color: $very-dark-grayish-blue;
+    color: map-get($colors, very-dark-grayish-blue);
     font-weight: 700;
   }
-
   &__date {
-    color: $desaturated-dark-blue;
+    color: map-get($colors, desaturated-dark-blue);
   }
-
   &__share-button {
     width: 2rem;
     height: 2rem;
-    background-color: $light-grayish-blue;
+    background-color: map-get($colors, light-grayish-blue);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: map-get($colors, hover-button);
+    }
   }
-
+  // === Share Menu Styling ===
   &__share-menu {
     position: absolute;
     display: flex;
     align-items: center;
-    background-color: $very-dark-grayish-blue;
+    background-color: map-get($colors, very-dark-grayish-blue);
     width: 100%;
-    color: $white;
+    color: map-get($colors, white);
     padding: 1.5rem 2rem;
-
+    border-radius: 10px;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: all 0.3s;
+    &.active {
+      visibility: visible;
+      transform: translateY(-100%);
+    }
     span {
       letter-spacing: 0.4rem;
       text-transform: uppercase;
       font-size: $regular-font-size;
       font-weight: 100;
-      color: $transparent-white;
+      color: map-get($colors, transparent-white);
     }
-
     ul {
       padding-left: 1rem;
       display: flex;
       align-items: center;
       gap: 1rem;
-
-      li {
-        a {
-          padding: 1px;
-          display: flex;
-          align-items: center;
-        }
+      li a {
+        padding: 1px;
+        display: flex;
+        align-items: center;
       }
     }
   }
 }
 
+// === Share Button and Menu Visibility ===
 #shareMenu {
   visibility: hidden;
   transform: translateY(0);
   transition: all 0.3s ease;
-}
-
-#shareMenu.active {
-  visibility: visible;
-  transform: translateY(-100%);
-}
-
-#shareButton.active {
-  background-color: $desaturated-dark-blue;
-  img {
-    filter: brightness(5);
+  &.active {
+    visibility: visible;
+    transform: translateY(-100%);
   }
 }
 
-#shareButton.active:hover {
-  background-color: $hover-button-active;
+#shareButton {
+  &.active {
+    background-color: map-get($colors, desaturated-dark-blue);
+    img {
+      filter: brightness(5);
+    }
+    &:hover {
+      background-color: map-get($colors, hover-button-active);
+    }
+  }
 }
 
-.blog-post__share-button:hover,
-.blog-post__share-button:focus {
-  background-color: $hover-button;
+.blog-post__share-button {
+  &:hover,
+  &:focus {
+    background-color: map-get($colors, hover-button);
+  }
 }
 
 .sr-only {
   display: none;
 }
 
-// === RESPONSIVE DESIGN ===
-
-// Tablets, small desktops, laptops
+// === Responsive Design ===
 @media (min-width: 768px) {
+  body {
+    height: 100vh;
+    justify-content: center;
+  }
   main {
-    height: 17.5rem;
     width: 45.5rem;
     display: flex;
     align-items: center;
@@ -207,15 +208,22 @@ ul {
     &__banner {
       height: 100%;
     }
-
-    &__image {
-      height: 100%;
-      object-position: left;
-    }
-
     &__content {
-      height: 100%;
       max-width: 27.75rem;
+    }
+    &__share-menu {
+      width: 15.5rem;
+      left: 75%;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        border: 12px solid transparent;
+        border-top-color: map-get($colors, very-dark-grayish-blue);
+        margin-left: -12px;
+        margin-bottom: -12px;
+      }
     }
   }
 }

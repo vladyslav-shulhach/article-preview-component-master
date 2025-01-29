@@ -15,10 +15,10 @@ body {
 main {
   margin-top: 4.5rem;
   width: 20.5rem;
-  overflow: hidden;
   border-radius: 9px;
+  overflow: hidden;
   position: relative;
-  box-shadow: 0px 12px 24px -12px hsla(215, 16%, 51%, 0.3);
+  box-shadow: 0px 12px 24px -12px hsl(215, 16%, 51%);
 }
 
 footer {
@@ -47,7 +47,7 @@ ul {
 }
 .blog-post__content {
   background-color: hsl(0, 0%, 100%);
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2rem;
   display: grid;
   gap: 1.875rem;
 }
@@ -57,25 +57,21 @@ ul {
 }
 .blog-post__title {
   font-size: 1rem;
-  line-height: 150%;
   color: hsl(217, 19%, 35%);
+  line-height: 1.5;
 }
 .blog-post__intro {
   font-size: 0.8rem;
-  letter-spacing: 0.025rem;
-  line-height: 150%;
   color: hsl(215, 16%, 51%);
+  line-height: 1.5;
 }
 .blog-post__meta {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.blog-post__avatar {
-  width: 2.5rem;
-}
 .blog-post__author-avatar {
-  width: 100%;
+  width: 2.5rem;
   border-radius: 50%;
 }
 .blog-post__author-container {
@@ -97,8 +93,10 @@ ul {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 1;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s;
+}
+.blog-post__share-button:hover {
+  background-color: hsl(208, 27%, 89%);
 }
 .blog-post__share-menu {
   position: absolute;
@@ -108,6 +106,14 @@ ul {
   width: 100%;
   color: hsl(0, 0%, 100%);
   padding: 1.5rem 2rem;
+  border-radius: 10px;
+  visibility: hidden;
+  transform: translateY(0);
+  transition: all 0.3s;
+}
+.blog-post__share-menu.active {
+  visibility: visible;
+  transform: translateY(-100%);
 }
 .blog-post__share-menu span {
   letter-spacing: 0.4rem;
@@ -133,7 +139,6 @@ ul {
   transform: translateY(0);
   transition: all 0.3s ease;
 }
-
 #shareMenu.active {
   visibility: visible;
   transform: translateY(-100%);
@@ -145,13 +150,11 @@ ul {
 #shareButton.active img {
   filter: brightness(5);
 }
-
 #shareButton.active:hover {
   background-color: hsl(217, 22%, 58%);
 }
 
-.blog-post__share-button:hover,
-.blog-post__share-button:focus {
+.blog-post__share-button:hover, .blog-post__share-button:focus {
   background-color: hsl(208, 27%, 89%);
 }
 
@@ -160,8 +163,11 @@ ul {
 }
 
 @media (min-width: 768px) {
+  body {
+    height: 100vh;
+    justify-content: center;
+  }
   main {
-    height: 17.5rem;
     width: 45.5rem;
     display: flex;
     align-items: center;
@@ -169,13 +175,21 @@ ul {
   .blog-post__banner {
     height: 100%;
   }
-  .blog-post__image {
-    height: 100%;
-    -o-object-position: left;
-       object-position: left;
-  }
   .blog-post__content {
-    height: 100%;
     max-width: 27.75rem;
+  }
+  .blog-post__share-menu {
+    width: 15.5rem;
+    left: 75%;
+  }
+  .blog-post__share-menu::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border: 12px solid transparent;
+    border-top-color: hsl(217, 19%, 35%);
+    margin-left: -12px;
+    margin-bottom: -12px;
   }
 }/*# sourceMappingURL=style.css.map */
