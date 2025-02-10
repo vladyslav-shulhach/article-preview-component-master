@@ -25,7 +25,7 @@ Users should be able to:
 
 Here is a screenshot of the project displayed on a desktop screen.
 
-![](./screenshot.jpg)
+![](./preview.png)
 
 ### Links
 
