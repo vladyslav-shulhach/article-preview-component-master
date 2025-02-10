@@ -30,7 +30,7 @@ Here is a screenshot of the project displayed on a desktop screen.
 ### Links
 
 - Solution URL: [here](https://your-solution-url.com)
-- Live Site URL: [here](https://your-live-site-url.com)
+- Live Site URL: [here](https://article-preview-component-master-gilt.vercel.app/)
 
 ## My process
 
